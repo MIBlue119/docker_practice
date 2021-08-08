@@ -74,27 +74,15 @@ $ sudo docker run --rm -it --name test_fastapi_container test_fastapi_image /bin
 ```
 $ docker builder prune 
 ```
-
 - Look the resource used at a container
 ```
 $ sudo docker top 69cba92b5a44
 ```
-
 - Remove build cache
 ```
 $ sudo docker builder prune
 ```
-
-
-docker build -f Dockerfile.api -t video_basedon_python .
-sudo docker run --rm -it --name test_video video_basedon_python /bin/bash
-uvicorn dev_fileserver.serve:app --reload
-sudo docker run --rm -it --name test_fastapi test-fast-app-api /bin/bash
-sudo docker run --rm -it -d -P --name test_fastapi test_fastapi_image /bin/bash 
-sudo iptables -A INPUT -i eth0 -p tcp --dport 49154 -j ACCEPT
-sudo docker run -it -d -P --name test_fastapi test_fastapi_image /bin/bash 
-sudo iptables -A INPUT -i eth0 -p tcp --dport 49155 -j ACCEPT
-sudo iptables -A INPUT -i eth0 -p tcp --dport 49154 -j DROP
-sudo docker run -it -d -p 49155:4557 --name test_fastapi test_fastapi_image /bin/bash 
-sudo docker run -it -p 4000:4557 --name test_fastapi test_fastapi_image /bin/bash
- 
+- Monitor the resource that used by the container
+```
+$ sudo docker stats docker_container
+```
