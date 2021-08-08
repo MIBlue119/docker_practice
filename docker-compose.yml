@@ -1,0 +1,14 @@
+# Test to run fastapi
+services:
+    api:
+        build:
+            context: .
+            dockerfile: Dockerfile.fastapi
+        image: test_fastapi_image #test-fast-app-api
+        # expose:
+        #     - "8000"
+        ports:
+                - "3080:4557"
+        restart: always
+        volumes:
+            - "./workspace:/app/dev_fileserver/dev_fileserver/workspace"
