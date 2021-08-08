@@ -86,3 +86,4 @@ $ sudo docker builder prune
 ```
 $ sudo docker stats docker_container
 ```
+<img width="884" alt="圖片" src="https://user-images.githubusercontent.com/9137836/128633442-4d232079-a9c1-4805-8a94-93c0808d61a0.png">
